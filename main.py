@@ -214,10 +214,15 @@ def main():
         subtitle="[italic]АО 'Гознак'[/italic]",
         box=ROUNDED,
         border_style="blue",
-        width=65
+        width=65,
+
     )
-    console.print(panel)
-    
+    aligned_panel = Align(panel, align="center", pad=10)
+    console.print()
+    console.print(aligned_panel)
+    console.print()
+
+
     # Интерактивный ввод данных
     host = console.input("[cyan]Введите IP адрес хоста: [/cyan]").strip()
     username = console.input("[cyan]Введите имя пользователя: [/cyan]").strip()
