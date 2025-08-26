@@ -1,11 +1,13 @@
 import yaml
 import json
+import getpass
 from datetime import datetime
 from src.linux_auditor import LinuxAuditor
 from rich.console import Console
 from rich.table import Table
 from rich.align import Align
-import getpass
+from rich.box import ROUNDED
+from rich.panel import Panel
 
 console = Console()
 
@@ -196,22 +198,25 @@ def save_json_report(results, host):
     console.print(f"[green]Report saved to {filename}[/green]")
 
 def main():
-    """Основная функция"""
-    console.print("[bold blue]IB Compliance Tool[/bold blue]")
-    banner = """
-    ╔══════════════════════════════════════════════════════════════╗
-    ║                                                              ║
-    ║   ██████╗  ██████╗ ███████╗███╗   ██╗ █████╗ ██╗  ██╗        ║
-    ║  ██╔════╝ ██╔═══██╗╚══███╔╝████╗  ██║██╔══██╗██║ ██╔╝        ║
-    ║  ██║  ███╗██║   ██║  ███╔╝ ██╔██╗ ██║███████║█████╔╝         ║
-    ║  ██║   ██║██║   ██║ ███╔╝  ██║╚██╗██║██╔══██║██╔═██╗         ║
-    ║  ╚██████╔╝╚██████╔╝███████╗██║ ╚████║██║  ██║██║  ██╗        ║
-    ║   ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝        ║
-    ║                                                              ║
-    ║                 [bold cyan]Compliance Audit System v1.0[/bold cyan]                 ║
-    ╚══════════════════════════════════════════════════════════════╝
+
+    banner_text = """
+     ██████╗  ██████╗ ███████╗███╗   ██╗ █████╗ ██╗  ██╗
+    ██╔════╝ ██╔═══██╗╚══███╔╝████╗  ██║██╔══██╗██║ ██╔╝
+    ██║  ███╗██║   ██║  ███╔╝ ██╔██╗ ██║███████║█████╔╝ 
+    ██║   ██║██║   ██║ ███╔╝  ██║╚██╗██║██╔══██║██╔═██╗ 
+    ╚██████╔╝╚██████╔╝███████╗██║ ╚████║██║  ██║██║  ██╗
+     ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝
     """
-    console.print(banner)
+    
+    panel = Panel(
+        banner_text,
+        title="[bold yellow]COMPLIANCE CHECK TOOL[/bold yellow]",
+        subtitle="[italic]АО 'Гознак'[/italic]",
+        box=ROUNDED,
+        border_style="blue",
+        width=65
+    )
+    console.print(panel)
     
     # Интерактивный ввод данных
     host = console.input("[cyan]Введите IP адрес хоста: [/cyan]").strip()
