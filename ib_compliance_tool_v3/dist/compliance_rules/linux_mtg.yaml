@@ -1,0 +1,2601 @@
+rules:
+  - id: "pam_faillock_per_user"
+    name: "PAM Faillock Per User Setting"
+    description: "Наличие параметра per_user в модуле pam_faillock.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_faillock.so' /etc/pam.d/common-auth.bak | grep -v '^#'"
+      expect: "per_user"
+
+  - id: "pam_faillock_deny"
+    name: "PAM Faillock Deny Setting"
+    description: "Наличие параметра deny=3 в модуле pam_faillock.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_faillock.so' /etc/pam.d/common-auth.bak | grep -v '^#'"
+      expect: "deny=3"
+
+  - id: "pam_lastlog_inactive"
+    name: "PAM Lastlog Inactive Setting"
+    description: "Наличие параметра inactive=45 в модуле pam_lastlog.so"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep 'pam_lastlog.so' /etc/pam.d/common-auth.bak | grep -v '^#'"
+      expect: "inactive=45"
+
+  - id: "pam_faillock_fail_interval"
+    name: "PAM Faillock Fail Interval Setting"
+    description: "Наличие параметра fail_interval=900 в модуле pam_faillock.so"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep 'pam_faillock.so' /etc/pam.d/common-auth.bak | grep -v '^#'"
+      expect: "fail_interval=900"
+
+  - id: "pam_faillock_unlock_time"
+    name: "PAM Faillock Unlock Time Setting"
+    description: "Наличие параметра unlock_time=900 в модуле pam_faillock.so"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep 'pam_faillock.so' /etc/pam.d/common-auth.bak | grep -v '^#'"
+      expect: "unlock_time=900"
+
+  - id: "pam_faillock_even_deny_root"
+    name: "PAM Faillock Even Deny Root Setting"
+    description: "Наличие параметра even_deny_root в модуле pam_faillock.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_faillock.so' /etc/pam.d/common-auth.bak | grep -v '^#'"
+      expect: "even_deny_root"
+  
+  - id: "pam_pwhistory_enforce_for_root"
+    name: "PAM Pwhistory Enforce For Root Setting"
+    description: "Наличие параметра enforce_for_root в модуле pam_pwhistory.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwhistory.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "enforce_for_root"
+
+  - id: "pam_pwhistory_remember"
+    name: "PAM Pwhistory Remember Setting"
+    description: "Наличие параметра remember=7 в модуле pam_pwhistory.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwhistory.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "remember=7"
+
+  - id: "pam_pwquality_minlen"
+    name: "PAM Pwquality Minlen Setting"
+    description: "Наличие параметра minlen=8 в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "minlen=8"
+
+  - id: "pam_pwquality_ocredit"
+    name: "PAM Pwquality Ocredit Setting"
+    description: "Наличие параметра ocredit=-1 в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "ocredit=-1"
+
+  - id: "pam_pwquality_ucredit"
+    name: "PAM Pwquality Ucredit Setting"
+    description: "Наличие параметра ucredit=-1 в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "ucredit=-1"
+
+  - id: "pam_pwquality_difok"
+    name: "PAM Pwquality Difok Setting"
+    description: "Наличие параметра difok=3 в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "difok=3"
+
+  - id: "pam_pwquality_lcredit"
+    name: "PAM Pwquality Lcredit Setting"
+    description: "Наличие параметра lcredit=-1 в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "lcredit=-1"
+
+  - id: "pam_pwquality_dcredit"
+    name: "PAM Pwquality Dcredit Setting"
+    description: "Наличие параметра dcredit=-1 в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "dcredit=-1"
+
+  - id: "pam_pwquality_enforce_for_root"
+    name: "PAM Pwquality Endorce For Root Setting"
+    description: "Наличие параметра enforce_for_root в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "enforce_for_root"
+
+  - id: "pam_pwquality_gecoscheck"
+    name: "PAM Pwquality Gecoscheck Setting"
+    description: "Наличие параметра gecoscheck=1 в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "gecoscheck=1"
+
+  - id: "pam_pwquality_usercheck"
+    name: "PAM Pwquality Usercheck Setting"
+    description: "Наличие параметра usercheck=1 в модуле pam_pwquality.so"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'pam_pwquality.so' /etc/pam.d/common-password.bak | grep -v '^#'"
+      expect: "usercheck=1"
+
+  # Параметры /etc/login.defs
+  - id: "login_defs_pass_max_days"
+    name: "Login Defs PASS_MAX_DAYS"
+    description: "Наличие параметра PASS_MAX_DAYS=60 в /etc/login.defs"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^PASS_MAX_DAYS' /etc/login.defs.bak | grep -v '^#' | tr '\t' ' ' | tr -s ' '"
+      expect: "PASS_MAX_DAYS 60"
+
+  - id: "login_defs_pass_min_days"
+    name: "Login Defs PASS_MIN_DAYS"
+    description: "Наличие параметра PASS_MIN_DAYS=0 в /etc/login.defs"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^PASS_MIN_DAYS' /etc/login.defs.bak | grep -v '^#' | tr '\t' ' ' | tr -s ' '"
+      expect: "PASS_MIN_DAYS 0"
+
+  - id: "login_defs_pass_warn_age"
+    name: "Login Defs PASS_WARN_AGE"
+    description: "Наличие параметра PASS_WARN_AGE=7 в /etc/login.defs"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^PASS_WARN_AGE' /etc/login.defs.bak | grep -v '^#' | tr '\t' ' ' | tr -s ' '"
+      expect: "PASS_WARN_AGE 7"
+
+  # Параметры /etc/X11/fly-dm/fly-dmrc
+  - id: "fly_dm_user_completion"
+    name: "Fly DM UserCompletion"
+    description: "Наличие параметра UserCompletion=false в fly-dmrc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^UserCompletion=' /etc/X11/fly-dm/fly-dmrc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "UserCompletion=false"
+
+  - id: "fly_dm_preselect_user"
+    name: "Fly DM PreselectUser"
+    description: "Наличие параметра PreselectUser=None в fly-dmrc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^PreselectUser=' /etc/X11/fly-dm/fly-dmrc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "PreselectUser=None"
+
+  - id: "fly_dm_hide_username"
+    name: "Fly DM HideUsername"
+    description: "Наличие параметра HideUsername=true в fly-dmrc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^HideUsername=' /etc/X11/fly-dm/fly-dmrc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "HideUsername=true"
+
+  - id: "fly_dm_user_list"
+    name: "Fly DM UserList"
+    description: "Наличие параметра UserList=false in fly-dmrc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^UserList=' /etc/X11/fly-dm/fly-dmrc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "UserList=false"
+
+  - id: "fly_dm_auto_login_enable"
+    name: "Fly DM AutoLoginEnable"
+    description: "Наличие параметра AutoLoginEnable=false в fly-dmrc"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^AutoLoginEnable=' /etc/X11/fly-dm/fly-dmrc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "AutoLoginEnable=false"
+
+  - id: "fly_dm_auto_relogin"
+    name: "Fly DM AutoReLogin"
+    description: "Наличие параметра AutoReLogin=false в fly-dmrc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^AutoReLogin=' /etc/X11/fly-dm/fly-dmrc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "AutoReLogin=false"
+
+  - id: "fly_dm_allow_root_login"
+    name: "Fly DM AllowRootLogin"
+    description: "Наличие параметра AllowRootLogin=false в fly-dmrc"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^AllowRootLogin=' /etc/X11/fly-dm/fly-dmrc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "AllowRootLogin=false"
+
+  - id: "fly_dm_no_pass_enable"
+    name: "Fly DM NoPassEnable"
+    description: "Наличие параметра NoPassEnable=false в fly-dmrc"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^NoPassEnable=' /etc/X11/fly-dm/fly-dmrc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "NoPassEnable=false"
+
+  # Параметры /usr/share/fly-wm/theme.master/themerc
+  - id: "fly_wm_screen_saver_delay"
+    name: "Fly WM ScreenSaverDelay"
+    description: "Наличие параметра ScreenSaverDelay=300 в themerc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^ScreenSaverDelay=' /usr/share/fly-wm/theme.master/themerc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "ScreenSaverDelay=300"
+
+  - id: "fly_wm_locker_on_dpms"
+    name: "Fly WM LockerOnDPMS"
+    description: "Наличие параметра LockerOnDPMS=true в themerc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^LockerOnDPMS=' /usr/share/fly-wm/theme.master/themerc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "LockerOnDPMS=true"
+
+  - id: "fly_wm_locker_on_lid"
+    name: "Fly WM LockerOnLid"
+    description: "Наличие параметра LockerOnLid=true в themerc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^LockerOnLid=' /usr/share/fly-wm/theme.master/themerc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "LockerOnLid=true"
+
+  - id: "fly_wm_locker_on_switch"
+    name: "Fly WM LockerOnSwitch"
+    description: "Наличие параметра LockerOnSwitch=true в themerc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^LockerOnSwitch=' /usr/share/fly-wm/theme.master/themerc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "LockerOnSwitch=true"
+
+  - id: "fly_wm_locker_on_sleep"
+    name: "Fly WM LockerOnSleep"
+    description: "Наличие параметра LockerOnSleep=true в themerc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^LockerOnSleep=' /usr/share/fly-wm/theme.master/themerc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "LockerOnSleep=true"
+
+  - id: "fly_wm_locker_wrong_passwd_timeout"
+    name: "Fly WM LockerWrongPasswdTimeout"
+    description: "Наличие параметра LockerWrongPasswdTimeout=2 в themerc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^LockerWrongPasswdTimeout=' /usr/share/fly-wm/theme.master/themerc.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "LockerWrongPasswdTimeout=2"
+
+  - id: "mkts_status_active"
+    name: "MKTS Status Active"
+    description: "Проверка что МКЦ активен (astra-mic-control status)"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-mic-control status 2>/dev/null || echo 'NOT_AVAILABLE'"
+      expect: "\u0410\u041a\u0422\u0418\u0412\u041d\u041e"
+
+  - id: "mkts_enabled_level"
+    name: "MKTS Enabled with Level"
+    description: "Проверка что МКЦ включен"
+    severity: "HIGH"
+    type: "contains_multiple"
+    check:
+      command: "echo '{password}' | sudo -S astra-mic-control is-enabled 2>/dev/null || echo 'NOT_AVAILABLE'"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e \u0423\u0440\u043e\u0432\u0435\u043d\u044c \u0446\u0435\u043b\u043e\u0441\u0442\u043d\u043e\u0441\u0442\u0438 2"
+
+  - id: "fs_ilev_status"
+    name: "FS Integrity Level Status"
+    description: "Проверка что защита файловой системы активна"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S set-fs-ilev status 2>/dev/null"
+      expect: "\u0410\u041a\u0422\u0418\u0412\u041d\u041e"
+
+  - id: "grub_max_integrity"
+    name: "Max Integrity Level in GRUB"
+    description: "Проверка наличия опции parsec.max_ilev=63 в параметрах загрузки"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^GRUB_CMDLINE_LINUX_DEFAULT' /etc/default/grub.bak | grep -v '^#'"
+      expect: "parsec.max_ilev=63"
+
+  - id: "afick_integrity_event_internal_change"
+    name: "AFICK Integrity Event Internal Change"
+    description: "Проверка параметра afick-integrity-event-internal-change enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"afick-integrity-event-internal-change\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "afick_integrity_event_hash_database_no_changed"
+    name: "AFICK Integrity Event Hash Database No Changed"
+    description: "Проверка параметра afick-integrity-event-hash-database-no-changed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"afick-integrity-event-hash-database-no-changed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "automatic_dns"
+    name: "Automatic DNS Enabled"
+    description: "Проверка параметра automatic-dns enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"automatic-dns\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "automatic_ip"
+    name: "Automatic IP Enabled"
+    description: "Проверка параметра automatic-ip enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"automatic-ip\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "automatic_netmask"
+    name: "Automatic Netmask Enabled"
+    description: "Проверка параметра automatic-netmask enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"automatic-netmask\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "automatic_gateway"
+    name: "Automatic Gateway Enabled"
+    description: "Проверка параметра automatic-gateway enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"automatic-gateway\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "afick_integrity_event_hash_database_updated"
+    name: "AFICK Integrity Event Hash Database Updated"
+    description: "Проверка параметра afick-integrity-event-hash-database-updated enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"afick-integrity-event-hash-database-updated\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "afick_integrity_event_hash_database_created"
+    name: "AFICK Integrity Event Hash Database Created"
+    description: "Проверка параметра afick-integrity-event-hash-database-created enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"afick-integrity-event-hash-database-created\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_nochmodx_lock"
+    name: "Astra Nochmodx Lock"
+    description: "Проверка параметра astra-nochmodx-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-nochmodx-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_modban_lock"
+    name: "Astra Modban Lock"
+    description: "Проверка параметра astra-modban-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-modban-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_ufw_control"
+    name: "Astra UFW Control"
+    description: "Проверка параметра astra-ufw-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-ufw-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_overlay"
+    name: "Astra Overlay"
+    description: "Проверка параметра astra-overlay enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-overlay\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_lkrg_control"
+    name: "Astra LKRG Control"
+    description: "Проверка параметра astra-lkrg-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-lkrg-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_control_enable_success"
+    name: "Digsig Control Enable Success"
+    description: "Проверка параметра digsig-control-enable-success enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-control-enable-success\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "event_chmod"
+    name: "Event Chmod"
+    description: "Проверка параметра event-chmod enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"event-chmod\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "event_chown"
+    name: "Event Chown"
+    description: "Проверка параметра event-chown enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"event-chown\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "event_chroot"
+    name: "Event Chroot"
+    description: "Проверка параметра event-chroot enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"event-chroot\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "event_umask"
+    name: "Event Umask"
+    description: "Проверка параметра event-umask enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"event-umask\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_control_disable_success"
+    name: "Digsig Control Disable Success"
+    description: "Проверка параметра digsig-control-disable-success enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-control-disable-success\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "user_session"
+    name: "User Session"
+    description: "Проверка параметра user-session enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"user-session\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "daemon_start"
+    name: "Daemon Start"
+    description: "Проверка параметра daemon-start enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"daemon-start\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "daemon_end"
+    name: "Daemon End"
+    description: "Проверка параметра daemon-end enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"daemon-end\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "syslog_ng_start"
+    name: "Syslog NG Start"
+    description: "Проверка параметра syslog-ng-start enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"syslog-ng-start\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "syslog_ng_stop"
+    name: "Syslog NG Stop"
+    description: "Проверка параметра syslog-ng-stop enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"syslog-ng-stop\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "quota_depleted"
+    name: "Quota Depleted"
+    description: "Проверка параметра quota-depleted enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"quota-depleted\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "afick_integrity_event_add_object"
+    name: "AFICK Integrity Event Add Object"
+    description: "Проверка параметра afick-integrity-event-add-object enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"afick-integrity-event-add-object\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "printer_added"
+    name: "Printer Added"
+    description: "Проверка параметра printer_added enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"printer_added\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "add_rule"
+    name: "Add Rule"
+    description: "Проверка параметра add-rule enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"add-rule\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "send_document"
+    name: "Send Document"
+    description: "Проверка параметра send-document enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"send-document\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "events_log_rotated"
+    name: "Events Log Rotated"
+    description: "Проверка параметра events-log-rotated enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"events-log-rotated\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "events_log_renamed"
+    name: "Events Log Renamed"
+    description: "Проверка параметра events-log-renamed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"events-log-renamed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "audit_log_removed"
+    name: "Audit Log Removed"
+    description: "Проверка параметра audit-log-removed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"audit-log-removed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "events_log_modified"
+    name: "Events Log Modified"
+    description: "Проверка параметра events-log-modified enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"events-log-modified\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "events_log_renamed_duplicate"
+    name: "Events Log Renamed (Duplicate)"
+    description: "Повторная проверка параметра events-log-renamed"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"events-log-renamed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "events_log_removed"
+    name: "Events Log Removed"
+    description: "Проверка параметра events-log-removed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"events-log-removed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "process_ends"
+    name: "Process Ends"
+    description: "Проверка параметра process-ends enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"process-ends\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_key_load_success"
+    name: "Digsig Key Load Success"
+    description: "Проверка параметра digsig-key-load-success enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-key-load-success\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "kernel_module"
+    name: "Kernel Module"
+    description: "Проверка параметра kernel-module enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"kernel-module\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_state_processing"
+    name: "Job State Processing"
+    description: "Проверка параметра job_state_processing enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_state_processing\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_created"
+    name: "Job Created"
+    description: "Проверка параметра job-created enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job-created\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_state_pending"
+    name: "Job State Pending"
+    description: "Проверка параметра job_state_pending enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_state_pending\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_state_stopped"
+    name: "Job State Stopped"
+    description: "Проверка параметра job_state_stopped enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_state_stopped\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_state_held"
+    name: "Job State Held"
+    description: "Проверка параметра job_state_held enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_state_held\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_state_canceled"
+    name: "Job State Canceled"
+    description: "Проверка параметра job_state_canceled enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_state_canceled\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_state_aborted"
+    name: "Job State Aborted"
+    description: "Проверка параметра job_state_aborted enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_state_aborted\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_marked"
+    name: "Job Marked"
+    description: "Проверка параметра job_marked enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_marked\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_created_duplicate"
+    name: "Job Created (Duplicate)"
+    description: "Повторная проверка параметра job_created"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_created\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_state_completed"
+    name: "Job State Completed"
+    description: "Проверка параметра job_state_completed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_state_completed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "adding_user_to_group"
+    name: "Adding User to Group"
+    description: "Проверка параметра adding-user-to-group enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"adding-user-to-group\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "adding_user_to_group_gpasswd"
+    name: "Adding User to Group Gpasswd"
+    description: "Проверка параметра adding-user-to-group-gpasswd enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"adding-user-to-group-gpasswd\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "access_conf_resource_denied"
+    name: "Access Conf Resource Denied"
+    description: "Проверка параметра access-conf-resource-denied enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"access-conf-resource-denied\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "conf_resources_param_no_changed"
+    name: "Conf Resources Param No Changed"
+    description: "Проверка параметра conf-resources-param-no-changed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"conf-resources-param-no-changed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "conf_resources_extended_param_no_changed"
+    name: "Conf Resources Extended Param No Changed"
+    description: "Проверка параметра conf-resources-extended-param-no-changed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"conf-resources-extended-param-no-changed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "device_mount_attempt_blocked"
+    name: "Device Mount Attempt Blocked"
+    description: "Проверка параметра device-mount-attempt-blocked enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"device-mount-attempt-blocked\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_binary_unsigned"
+    name: "Digsig Binary Unsigned"
+    description: "Проверка параметра digsig-binary-unsigned enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-binary-unsigned\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_binary_signed"
+    name: "Digsig Binary Signed"
+    description: "Проверка параметра digsig-binary-signed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-binary-signed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "execute_process"
+    name: "Execute Process"
+    description: "Проверка параметра execute-process enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"execute-process\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "execute_sudo_process"
+    name: "Execute Sudo Process"
+    description: "Проверка параметра execute-sudo-process enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"execute-sudo-process\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "server_started"
+    name: "Server Started"
+    description: "Проверка параметра server_started enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"server_started\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "afick_integrity_event_begin_compare"
+    name: "AFICK Integrity Event Begin Compare"
+    description: "Проверка параметра afick-integrity-event-begin-compare enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"afick-integrity-event-begin-compare\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "self_diagnostics_started"
+    name: "Self Diagnostics Started"
+    description: "Проверка параметра self-diagnostics-started enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"self-diagnostics-started\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "event_acl"
+    name: "Event ACL"
+    description: "Проверка параметра event-acl enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"event-acl\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_gid"
+    name: "Changing GID"
+    description: "Проверка параметра changing-gid enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-gid\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_uid"
+    name: "Changing UID"
+    description: "Проверка параметра changing-uid enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-uid\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "conf_resources_param_changed"
+    name: "Conf Resources Param Changed"
+    description: "Проверка параметра conf-resources-param-changed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"conf-resources-param-changed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "modifying_group"
+    name: "Modifying Group"
+    description: "Проверка параметра modifying-group enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"modifying-group\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "modifying_directory"
+    name: "Modifying Directory"
+    description: "Проверка параметра modifying-directory enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"modifying-directory\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "mac_categories"
+    name: "MAC Categories"
+    description: "Проверка параметра mac-categories enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"mac-categories\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "mac_levels"
+    name: "MAC Levels"
+    description: "Проверка параметра mac-levels enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"mac-levels\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_account_name"
+    name: "Changing Account Name"
+    description: "Проверка параметра changing-account-name enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-account-name\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_primary_group"
+    name: "Changing Primary Group"
+    description: "Проверка параметра changing-primary-group enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-primary-group\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "capabilities_change"
+    name: "Capabilities Change"
+    description: "Проверка параметра capabilities-change enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"capabilities-change\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "modifying_group_members"
+    name: "Modifying Group Members"
+    description: "Проверка параметра modifying-group-members enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"modifying-group-members\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_password_expiration_date"
+    name: "Changing Password Expiration Date"
+    description: "Проверка параметра changing-password-expiration-date enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-password-expiration-date\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_account_expiration_date"
+    name: "Changing Account Expiration Date"
+    description: "Проверка параметра changing-account-expiration-date enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-account-expiration-date\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "modifying_file"
+    name: "Modifying File"
+    description: "Проверка параметра modifying-file enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"modifying-file\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_max_age"
+    name: "Changing Max Age"
+    description: "Проверка параметра changing-max-age enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-max-age\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_min_age"
+    name: "Changing Min Age"
+    description: "Проверка параметра changing-min-age enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-min-age\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "pdac_state_changed"
+    name: "PDAC State Changed"
+    description: "Проверка параметра pdac-state-changed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"pdac-state-changed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_password_warning"
+    name: "Changing Password Warning"
+    description: "Проверка параметра changing-password-warning enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-password-warning\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_inactive_days"
+    name: "Changing Inactive Days"
+    description: "Проверка параметра changing-inactive-days enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-inactive-days\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "previous_login"
+    name: "Previous Login"
+    description: "Проверка параметра previous-login enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"previous-login\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_config_modify_success"
+    name: "Digsig Config Modify Success"
+    description: "Проверка параметра digsig-config-modify-success enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-config-modify-success\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "security_tool_config_changed"
+    name: "Security Tool Config Changed"
+    description: "Проверка параметра security-tool-config-changed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"security-tool-config-changed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "software_part_config_changed"
+    name: "Software Part Config Changed"
+    description: "Проверка параметра software-part-config-changed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"software-part-config-changed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "self_diagnostics_critical"
+    name: "Self Diagnostics Critical"
+    description: "Проверка параметра self-diagnostics-critical enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"self-diagnostics-critical\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_marking_skipped"
+    name: "Job Marking Skipped"
+    description: "Проверка параметра job_marking_skipped enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_marking_skipped\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "device_mount"
+    name: "Device Mount"
+    description: "Проверка параметра device-mount enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"device-mount\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "package_installation_started"
+    name: "Package Installation Started"
+    description: "Проверка параметра package-installation-started enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"package-installation-started\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "package_upgrade_started"
+    name: "Package Upgrade Started"
+    description: "Проверка параметра package-upgrade-started enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"package-upgrade-started\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "package_removing_started"
+    name: "Package Removing Started"
+    description: "Проверка параметра package-removing-started enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"package-removing-started\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "disk_space_running_out"
+    name: "Disk Space Running Out"
+    description: "Проверка параметра disk-space-running-out enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"disk-space-running-out\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "ram_running_out"
+    name: "RAM Running Out"
+    description: "Проверка параметра ram-running-out enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"ram-running-out\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "failed_authorization"
+    name: "Failed Authorization"
+    description: "Проверка параметра failed-authorization enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"failed-authorization\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "process_ends_abnormally"
+    name: "Process Ends Abnormally"
+    description: "Проверка параметра process-ends-abnormally enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"process-ends-abnormally\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "usb_mass_storage_detected"
+    name: "USB Mass Storage Detected"
+    description: "Проверка параметра usb-mass-storage-detected enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"usb-mass-storage-detected\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "connection_update"
+    name: "Connection Update"
+    description: "Проверка параметра connection-update enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"connection-update\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_xattr_unsigned"
+    name: "Digsig XAttr Unsigned"
+    description: "Проверка параметра digsig-xattr-unsigned enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-xattr-unsigned\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_xattr_signed"
+    name: "Digsig XAttr Signed"
+    description: "Проверка параметра digsig-xattr-signed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-xattr-signed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "server_stopped"
+    name: "Server Stopped"
+    description: "Проверка параметра server_stopped enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"server_stopped\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "job_printing_denied"
+    name: "Job Printing Denied"
+    description: "Проверка параметра job_printing_denied enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"job_printing_denied\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_sysrq_lock"
+    name: "Astra SysRq Lock"
+    description: "Проверка параметра astra-sysrq-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-sysrq-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "file_opened"
+    name: "File Opened"
+    description: "Проверка параметра file-opened enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"file-opened\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_key_revoke_success"
+    name: "Digsig Key Revoke Success"
+    description: "Проверка параметра digsig-key-revoke-success enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-key-revoke-success\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_control_enable_fail"
+    name: "Digsig Control Enable Fail"
+    description: "Проверка параметра digsig-control-enable-fail enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-control-enable-fail\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_control_disable_fail"
+    name: "Digsig Control Disable Fail"
+    description: "Проверка параметра digsig-control-disable-fail enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-control-disable-fail\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_key_load_fail"
+    name: "Digsig Key Load Fail"
+    description: "Проверка параметра digsig-key-load-fail enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-key-load-fail\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "digsig_key_revoke_fail"
+    name: "Digsig Key Revoke Fail"
+    description: "Проверка параметра digsig-key-revoke-fail enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"digsig-key-revoke-fail\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "self_diagnostics_error"
+    name: "Self Diagnostics Error"
+    description: "Проверка параметра self-diagnostics-error enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"self-diagnostics-error\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_ilev1_control"
+    name: "Astra ILEV1 Control"
+    description: "Проверка параметра astra-ilev1-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-ilev1-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "server_restarted"
+    name: "Server Restarted"
+    description: "Проверка параметра server_restarted enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"server_restarted\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "file_renamed"
+    name: "File Renamed"
+    description: "Проверка параметра file-renamed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"file-renamed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_hardened_control"
+    name: "Astra Hardened Control"
+    description: "Проверка параметра astra-hardened-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-hardened-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_modeswitch"
+    name: "Astra ModeSwitch"
+    description: "Проверка параметра astra-modeswitch enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-modeswitch\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_mode_apps"
+    name: "Astra Mode Apps"
+    description: "Проверка параметра astra-mode-apps enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-mode-apps\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_docker_isolation"
+    name: "Astra Docker Isolation"
+    description: "Проверка параметра astra-docker-isolation enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-docker-isolation\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "device_fully_formatted"
+    name: "Device Fully Formatted"
+    description: "Проверка параметра device-fully-formatted enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"device-fully-formatted\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "access_and_modifying_conf_resource"
+    name: "Access and Modifying Conf Resource"
+    description: "Проверка параметра access-and-modifying-conf-resource enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"access-and-modifying-conf-resource\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "self_diagnostics_warning"
+    name: "Self Diagnostics Warning"
+    description: "Проверка параметра self-diagnostics-warning enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"self-diagnostics-warning\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "printer_modified"
+    name: "Printer Modified"
+    description: "Проверка параметра printer_modified enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"printer_modified\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "printer_deleted"
+    name: "Printer Deleted"
+    description: "Проверка параметра printer_deleted enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"printer_deleted\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "package_not_installed"
+    name: "Package Not Installed"
+    description: "Проверка параметра package-not-installed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"package-not-installed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "package_installed"
+    name: "Package Installed"
+    description: "Проверка параметра package-installed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"package-installed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "process_out_of_ram"
+    name: "Process Out of RAM"
+    description: "Проверка параметра process-out-of-ram enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"process-out-of-ram\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "device_unmount"
+    name: "Device Unmount"
+    description: "Проверка параметра device-unmount enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"device-unmount\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "device_disconnect"
+    name: "Device Disconnect"
+    description: "Проверка параметра device-disconnect enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"device-disconnect\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "self_diagnostics_completed"
+    name: "Self Diagnostics Completed"
+    description: "Проверка параметра self-diagnostics-completed enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"self-diagnostics-completed\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "connection_unavailable"
+    name: "Connection Unavailable"
+    description: "Проверка параметра connection-unavailable enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"connection-unavailable\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "connection_activated"
+    name: "Connection Activated"
+    description: "Проверка параметра connection-activated enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"connection-activated\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "system_shutdown"
+    name: "System Shutdown"
+    description: "Проверка параметра system-shutdown enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"system-shutdown\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "system_boot"
+    name: "System Boot"
+    description: "Проверка параметра system-boot enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"system-boot\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "change_system_time"
+    name: "Change System Time"
+    description: "Проверка параметра change-system-time enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"change-system-time\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "changing_account_password"
+    name: "Changing Account Password"
+    description: "Проверка параметра changing-account-password enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"changing-account-password\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "server_audit"
+    name: "Server Audit"
+    description: "Проверка параметра server_audit enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"server_audit\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "network_event"
+    name: "Network Event"
+    description: "Проверка параметра network-event enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"network-event\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "creating_group"
+    name: "Creating Group"
+    description: "Проверка параметра creating-group enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"creating-group\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "create_conf_resource"
+    name: "Create Conf Resource"
+    description: "Проверка параметра create-conf-resource enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"create-conf-resource\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "creating_account"
+    name: "Creating Account"
+    description: "Проверка параметра creating-account enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"creating-account\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "file_created"
+    name: "File Created"
+    description: "Проверка параметра file-created enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"file-created\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "removing_group"
+    name: "Removing Group"
+    description: "Проверка параметра removing-group enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"removing-group\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "delete_conf_resource"
+    name: "Delete Conf Resource"
+    description: "Проверка параметра delete-conf-resource enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"delete-conf-resource\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"0"'
+
+  - id: "remove_rule"
+    name: "Remove Rule"
+    description: "Проверка параметра remove-rule enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"remove-rule\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "removing_user_from_group"
+    name: "Removing User from Group"
+    description: "Проверка параметра removing-user-from-group enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"removing-user-from-group\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "deleting_account"
+    name: "Deleting Account"
+    description: "Проверка параметра deleting-account enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"deleting-account\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "file_removal"
+    name: "File Removal"
+    description: "Проверка параметра file-removal enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"file-removal\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "afick_integrity_event_del_object"
+    name: "AFICK Integrity Event Delete Object"
+    description: "Проверка параметра afick-integrity-event-del-object enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"afick-integrity-event-del-object\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_autologin_control"
+    name: "Astra Autologin Control"
+    description: "Проверка параметра astra-autologin-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-autologin-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_noautonet_control"
+    name: "Astra NoAutoNet Control"
+    description: "Проверка параметра astra-noautonet-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-noautonet-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_secdel_control"
+    name: "Astra SecDel Control"
+    description: "Проверка параметра astra-secdel-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-secdel-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_shutdown_lock"
+    name: "Astra Shutdown Lock"
+    description: "Проверка параметра astra-shutdown-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-shutdown-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_console_lock"
+    name: "Astra Console Lock"
+    description: "Проверка параметра astra-console-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-console-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_commands_lock"
+    name: "Astra Commands Lock"
+    description: "Проверка параметра astra-commands-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-commands-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_interpreters_lock"
+    name: "Astra Interpreters Lock"
+    description: "Проверка параметра astra-interpreters-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-interpreters-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_bash_lock"
+    name: "Astra Bash Lock"
+    description: "Проверка параметра astra-bash-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-bash-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_macros_lock"
+    name: "Astra Macros Lock"
+    description: "Проверка параметра astra-macros-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-macros-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_sumac_lock"
+    name: "Astra Sumac Lock"
+    description: "Проверка параметра astra-sumac-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-sumac-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_mac_control"
+    name: "Astra MAC Control"
+    description: "Проверка параметра astra-mac-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-mac-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_mount_lock"
+    name: "Astra Mount Lock"
+    description: "Проверка параметра astra-mount-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-mount-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_sudo_control"
+    name: "Astra Sudo Control"
+    description: "Проверка параметра astra-sudo-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-sudo-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_format_lock"
+    name: "Astra Format Lock"
+    description: "Проверка параметра astra-format-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-format-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_ulimits_control"
+    name: "Astra Ulimits Control"
+    description: "Проверка параметра astra-ulimits-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-ulimits-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_nobootmenu_control"
+    name: "Astra NoBootMenu Control"
+    description: "Проверка параметра astra-nobootmenu-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-nobootmenu-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_swapwiper_control"
+    name: "Astra SwapWiper Control"
+    description: "Проверка параметра astra-swapwiper-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-swapwiper-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_mic_control"
+    name: "Astra Mic Control"
+    description: "Проверка параметра astra-mic-control enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-mic-control\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "succeed_session_unlocking"
+    name: "Succeed Session Unlocking"
+    description: "Проверка параметра succeed-session-unlocking enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"succeed-session-unlocking\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "successed_authorization"
+    name: "Successed Authorization"
+    description: "Проверка параметра successed-authorization enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"successed-authorization\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "astra_ptrace_lock"
+    name: "Astra Ptrace Lock"
+    description: "Проверка параметра astra-ptrace-lock enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"astra-ptrace-lock\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "connection_activate"
+    name: "Connection Activate"
+    description: "Проверка параметра connection-activate enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"connection-activate\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "internet_connected"
+    name: "Internet Connected"
+    description: "Проверка параметра internet-connected enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"internet-connected\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "usb_disconnect"
+    name: "USB Disconnect"
+    description: "Проверка параметра usb-disconnect enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"usb-disconnect\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "new_usb_device"
+    name: "New USB Device"
+    description: "Проверка параметра new-usb-device enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"new-usb-device\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "user_blocked_by_tally"
+    name: "User Blocked by Tally"
+    description: "Проверка параметра user-blocked-by-tally enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"user-blocked-by-tally\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "device_formatted"
+    name: "Device Formatted"
+    description: "Проверка параметра device-formatted enabled"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep -A 1 -B 1 '\"device-formatted\"' /etc/astra-syslog.conf 2>/dev/null || echo 'NOT_FOUND'"
+      expect: '"enabled":"1"'
+
+  - id: "audit_admin_space_left"
+    name: "Audit Second Threshold (admin_space_left)"
+    description: "Наличие в файле /etc/audit/auditd.conf параметра admin_space_left = 50"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep '^admin_space_left ' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "admin_space_left = 50"
+
+  - id: "audit_admin_space_left_action"
+    name: "Audit Action on Second Threshold"
+    description: "Действие в случае достижения второго порога: SUSPEND"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep '^admin_space_left_action' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "admin_space_left_action = SUSPEND"
+
+  - id: "audit_max_log_file_action"
+    name: "Audit Action on Max Log File Size"
+    description: "Действие в случае достижения максимального размера файла логирования: ROTATE"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep 'max_log_file_action' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "max_log_file_action = ROTATE"
+
+  - id: "audit_space_left_action"
+    name: "Audit Action on First Threshold"
+    description: "Действие в случае достижения первого порога: SYSLOG"
+    severity: "MEDIUM"
+    type: "contains_multiple"
+    check:
+      command: "echo '{password}' | sudo -S grep 'space_left_action' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "space_left_action = SYSLOG"
+
+  - id: "audit_disk_error_action"
+    name: "Audit Action on Disk I/O Error"
+    description: "Действие в случае ошибки ввода/вывода: SUSPEND"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep 'disk_error_action' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "disk_error_action = SUSPEND"
+
+  - id: "audit_disk_full_action"
+    name: "Audit Action on Full Disk"
+    description: "Действие в случае, если диск заполнен: SUSPEND"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep 'disk_full_action' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "disk_full_action = SUSPEND"
+
+  - id: "auditd_service_running"
+    name: "Auditd Service Running"
+    description: "Запуск службы логирования auditd: start"
+    severity: "HIGH"
+    type: "equals"
+    check:
+      command: "systemctl is-active auditd 2>/dev/null || echo 'inactive'"
+      expect: "active"
+
+  - id: "auditd_service_enabled"
+    name: "Auditd Service Enabled"
+    description: "Запуск службы логирования auditd: enable (автозагрузка)"
+    severity: "HIGH"
+    type: "equals"
+    check:
+      command: "systemctl is-enabled auditd 2>/dev/null || echo 'disabled'"
+      expect: "enabled"
+
+  - id: "syslog_ng_service_running"
+    name: "Syslog-NG Service Running"
+    description: "Запуск службы логирования syslog-ng: start"
+    severity: "MEDIUM"
+    type: "equals"
+    check:
+      command: "systemctl is-active syslog-ng 2>/dev/null || echo 'inactive'"
+      expect: "active"
+
+  - id: "syslog_ng_service_enabled"
+    name: "Syslog-NG Service Enabled"
+    description: "Запуск службы логирования syslog-ng: enable (автозагрузка)"
+    severity: "MEDIUM"
+    type: "equals"
+    check:
+      command: "systemctl is-enabled syslog-ng 2>/dev/null || echo 'disabled'"
+      expect: "enabled"
+
+  - id: "audit_num_logs"
+    name: "Audit Number of Log Files"
+    description: "Количество новых сохраняемых файлов (при чередовании): 90"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep 'num_logs' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "num_logs = 90"
+
+  - id: "audit_max_log_file"
+    name: "Audit Max Log File Size"
+    description: "Максимальный размер файла логирования, МБ: 50"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep 'max_log_file' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "max_log_file = 50"
+
+  - id: "audit_space_left"
+    name: "Audit First Threshold (space_left)"
+    description: "Первый порог, МБ: 75"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep 'space_left' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "space_left = 75"
+
+  - id: "audit_log_file"
+    name: "Audit Log File Path"
+    description: "Файл логирования: /var/log/audit/audit.log"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep 'log_file' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "log_file = /var/log/audit/audit.log"
+
+  - id: "audit_log_format"
+    name: "Audit Log Format"
+    description: "Формат логирования: RAW"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S grep 'log_format' /etc/audit/auditd.conf.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "log_format = RAW"
+
+  - id: "syslog_ng_rotate_count"
+    name: "Syslog-NG Log Rotate Count"
+    description: "Наличие в файле /etc/logrotate.d/syslog-ng-mod-astra параметра: rotate 3"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep ' rotate' /etc/logrotate.d/syslog-ng-mod-astra.bak 2>/dev/null || echo 'NOT_FOUND'" 
+      expect: "rotate 3"
+
+  - id: "syslog_ng_rotate_frequency"
+    name: "Syslog-NG Log Rotate Frequency"
+    description: "Наличие в файле /etc/logrotate.d/syslog-ng-mod-astra параметра: monthly"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep 'monthly' /etc/logrotate.d/syslog-ng-mod-astra.bak 2>/dev/null || echo 'NOT_FOUND'"
+      expect: "monthly"
+
+  - id: "astra_noautonet_control"
+    name: "Astra NoAutoNet Control"
+    description: "Выполнение команды: astra-noautonet-control disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-noautonet-control is-enabled 2>/dev/null"
+      expect: "\u0412\u042b\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_shutdown_lock"
+    name: "Astra Shutdown Lock"
+    description: "Выполнение команды: astra-shutdown-lock disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-shutdown-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u042b\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_sysrq_lock"
+    name: "Astra SysRq Lock"
+    description: "Выполнение команды: astra-sysrq-lock enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-sysrq-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_macros_lock"
+    name: "Astra Macros Lock"
+    description: "Выполнение команды: astra-macros-lock enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-macros-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_ptrace_lock"
+    name: "Astra Ptrace Lock"
+    description: "Выполнение команды: astra-ptrace-lock enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-ptrace-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_ulimits_control"
+    name: "Astra Ulimits Control"
+    description: "Выполнение команды: astra-ulimits-control enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-ulimits-control is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_audit_control"
+    name: "Astra Audit Control"
+    description: "Выполнение команды: astra-audit-control enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-audit-control is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_bash_lock"
+    name: "Astra Bash Lock"
+    description: "Выполнение команды: astra-bash-lock disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-bash-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u042b\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_interpreters_lock"
+    name: "Astra Interpreters Lock"
+    description: "Выполнение команды: astra-interpreters-lock enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-interpreters-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_console_lock"
+    name: "Astra Console Lock"
+    description: "Выполнение команды: astra-console-lock enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-console-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_sudo_control"
+    name: "Astra Sudo Control"
+    description: "Выполнение команды: astra-sudo-control enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-sudo-control is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_ufw_control"
+    name: "Astra UFW Control"
+    description: "Выполнение команды: astra-ufw-control disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-ufw-control is-enabled 2>/dev/null"
+      expect: "\u0412\u042b\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_overlay"
+    name: "Astra Overlay"
+    description: "Выполнение команды: astra-overlay disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-overlay is-enabled 2>/dev/null"
+      expect: "\u0412\u042b\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_audit_network_control"
+    name: "Astra Audit Network Control"
+    description: "Выполнение команды: astra-audit-network-control disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-audit-network-control is-enabled 2>/dev/null"
+      expect: "DISABLED"
+
+  - id: "astra_format_lock"
+    name: "Astra Format Lock"
+    description: "Выполнение команды: astra-format-lock enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-format-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_rootloginssh_control"
+    name: "Astra Root Login SSH Control"
+    description: "Выполнение команды: astra-rootloginssh-control enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-rootloginssh-control is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_recoverylogin_control"
+    name: "Astra Recovery Login Control"
+    description: "Выполнение команды: astra-recoverylogin-control disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-recoverylogin-control is-enabled 2>/dev/null"
+      expect: "\u0412\u042b\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_mount_lock"
+    name: "Astra Mount Lock"
+    description: "Выполнение команды: astra-mount-lock enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-mount-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_nochmodx_lock"
+    name: "Astra Nochmodx Lock"
+    description: "Выполнение команды: astra-nochmodx-lock enable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-nochmodx-lock is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_lkrg_control"
+    name: "Astra LKRG Control"
+    description: "Выполнение команды: astra-lkrg-control disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-lkrg-control is-enabled 2>/dev/null"
+      expect: "\u0412\u042b\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "astra_nobootmenu_control"
+    name: "Astra NoBootMenu Control"
+    description: "Выполнение команды: astra-nobootmenu-control disable"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-nobootmenu-control is-enabled 2>/dev/null"
+      expect: "\u0412\u042b\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "cupsd_loglevel"
+    name: "Cupsd loglevel"
+    description: "Наличие параметра LogLevel warn в cupsd.conf"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^LogLevel' /etc/cups/cupsd.conf.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "LogLevel warn"
+
+  - id: "cupsd_KeepAlive"
+    name: "Cupsd KeepAlive"
+    description: "Наличие параметра KeepAlive on в cupsd.conf"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^KeepAliv' /etc/cups/cupsd.conf.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "KeepAlive on"
+
+  - id: "cupsctl_remote_any"
+    name: "cupsctl remote any control"
+    description: "Выполнение команды: cupsctl --no-remote-any"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S cupsctl 2>/dev/null | grep 'remote_any'"
+      expect: "_remote_any=0"
+
+  - id: "cupsd_Listen"
+    name: "Cupsd Listen"
+    description: "Наличие параметра Listen localhost:631 в cupsd.conf"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^Listen l' /etc/cups/cupsd.conf.bak 2>/dev/null || echo 'FILE_NOT_FOUND'"
+      expect: "Listen localhost:631"
+
+  - id: "cupsd_allow_from_all"
+    name: "Allow from all"
+    description: "Отсутствие директивы «Allow from all»"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep 'Allow all' /etc/cups/cupsd.conf.bak || echo 'OK'"
+      expect: "OK"
+
+  - id: "hard_fsize_limits"
+    name: "Настройка limits.conf или 99-astra-limits.conf "
+    description: "Настройка лимита hard fsize"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^hard fsize' /etc/security/limits.conf.bak || grep '^hard fsize' /etc/security/limits.d/99-astra-limits.conf.bak || echo 'NOT_FOUND'"
+      expect: "hard fsize 50000000"
+
+  - id: "soft_fsize_limits"
+    name: "Настройка limits.conf или 99-astra-limits.conf "
+    description: "Настройка лимита soft fsize"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^soft fsize' /etc/security/limits.conf.bak || grep '^soft fsize' /etc/security/limits.d/99-astra-limits.conf.bak || echo 'NOT_FOUND'"
+      expect: "soft fsize 25000000"
+
+  - id: "hard_nofile_limits"
+    name: "Настройка limits.conf или 99-astra-limits.conf "
+    description: "Настройка лимита hard nofile"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^hard nofile' /etc/security/limits.conf.bak || grep '^hard nofile' /etc/security/limits.d/99-astra-limits.conf.bak || echo 'NOT_FOUND'"
+      expect: "hard nofile 4096"
+
+  - id: "soft_nofile_limits"
+    name: "Настройка limits.conf или 99-astra-limits.conf "
+    description: "Настройка лимита soft nofile"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^soft nofile' /etc/security/limits.conf.bak || grep '^soft nofile' /etc/security/limits.d/99-astra-limits.conf.bak || echo 'NOT_FOUND'"
+      expect: "soft nofile 2048"
+
+  - id: "hard_proc_limits"
+    name: "Настройка limits.conf или 99-astra-limits.conf "
+    description: "Настройка лимита hard nproc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^hard nproc' /etc/security/limits.conf.bak|| grep '^hard nproc' /etc/security/limits.d/99-astra-limits.conf.bak || echo 'NOT_FOUND'"
+      expect: "hard nproc 2000"
+
+  - id: "soft_nproc_limits"
+    name: "Настройка limits.conf или 99-astra-limits.conf "
+    description: "Настройка лимита soft nproc"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^soft nproc' /etc/security/limits.conf.bak || grep '^soft nproc' /etc/security/limits.d/99-astra-limits.conf.bak || echo 'NOT_FOUND'"
+      expect: "soft nproc 1000"
+
+  - id: "hard_core_limits"
+    name: "Настройка limits.conf или 99-astra-limits.conf "
+    description: "Настройка лимита hard core"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^hard core' /etc/security/limits.conf.bak || grep '^hard core' /etc/security/limits.d/99-astra-limits.conf.bak || echo 'NOT_FOUND'"
+      expect: "hard core 0"
+
+  - id: "hard_maxlogins_limits"
+    name: "Настройка limits.conf или 99-astra-limits.conf "
+    description: "Настройка лимита hard maxlogins"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^hard maxlogins' /etc/security/limits.conf.bak || grep '^hard maxlogins' /etc/security/limits.d/99-astra-limits.conf.bak || echo 'NOT_FOUND'"
+      expect: "hard maxlogins 2"
+
+  - id: "astra_secdel_control_enabled"
+    name: "Astra Secdel Control Enabled"
+    description: "Проверка что astra-secdel-control включен"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-secdel-control is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e\n\u0434\u043b\u044f /"
+
+
+
+
+  - id: "astra-swapwiper-control _enabled"
+    name: "astra-swapwiper-control  Enabled"
+    description: "Проверка что astra-swapwiper-control  включен"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "echo '{password}' | sudo -S astra-swapwiper-control  is-enabled 2>/dev/null"
+      expect: "\u0412\u041a\u041b\u042e\u0427\u0415\u041d\u041e"
+
+  - id: "sshd_hostbased_authentication_disabled"
+    name: "HostbasedAuthentication Disabled or Not Set"
+    description: "Параметр «HostbasedAuthentication» в файле /etc/ssh/sshd_config отсутствует или закомментирован"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^HostbasedAuthentication' /etc/ssh/sshd_config.bak 2>/dev/null || echo 'not_found'"
+      expect: "not_found"
+
+  - id: "sshd_permit_root_login_no"
+    name: "PermitRootLogin is No"
+    description: "Проверка, что в /etc/ssh/sshd_config установлено PermitRootLogin no"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^PermitRootLogin' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "PermitRootLogin no"
+
+  - id: "sshd_tcp_keep_alive_yes"
+    name: "TCPKeepAlive is Yes"
+    description: "Проверка, что в /etc/ssh/sshd_config установлено TCPKeepAlive yes"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^TCPKeepAlive' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "TCPKeepAlive yes"
+
+  - id: "sshd_use_pam_yes"
+    name: "UsePAM is Yes"
+    description: "Проверка, что в /etc/ssh/sshd_config установлено UsePAM yes"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^UsePAM' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "UsePAM yes"
+
+  - id: "sshd_login_grace_time_30"
+    name: "LoginGraceTime is 30"
+    description: "Проверка, что в /etc/ssh/sshd_config установлено LoginGraceTime 30"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^LoginGraceTime' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "LoginGraceTime 30"
+
+  - id: "sshd_ignore_user_known_hosts_yes"
+    name: "IgnoreUserKnownHosts is Yes"
+    description: "Проверка, что в /etc/ssh/sshd_config установлено IgnoreUserKnownHosts yes"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^IgnoreUserKnownHosts' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "IgnoreUserKnownHosts yes"
+
+  - id: "sshd_ignore_rhosts_yes"
+    name: "IgnoreRhosts is Yes"
+    description: "Проверка, что в /etc/ssh/sshd_config установлено IgnoreRhosts yes"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^IgnoreRhosts' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "IgnoreRhosts yes"
+
+  - id: "sshd_max_sessions_2"
+    name: "MaxSessions is 2"
+    description: "Проверка, что в /etc/ssh/sshd_config установлено MaxSessions 2"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^MaxSessions' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "MaxSessions 2"
+
+  - id: "sshd_permit_empty_passwords_no"
+    name: "PermitEmptyPasswords is No"
+    description: "Проверка, что в /etc/ssh/sshd_config установлено PermitEmptyPasswords no"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep '^PermitEmptyPasswords' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "PermitEmptyPasswords no"
+
+  - id: "ssh_client_server_alive_count_max_3"
+    name: "ServerAliveCountMax is 3"
+    description: "Проверка, что в /etc/ssh/ssh_config установлено ServerAliveCountMax 3"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^ServerAliveCountMax' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "ServerAliveCountMax 3"
+
+  - id: "ssh_client_server_alive_interval_300"
+    name: "ServerAliveInterval is 300"
+    description: "Проверка, что в /etc/ssh/ssh_config установлено ServerAliveInterval 300"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^ServerAliveInterval' /etc/ssh/sshd_config.bak 2>/dev/null"
+      expect: "ServerAliveInterval 300"
+
+  - id: "systemd_timesyncd_running"
+    name: "systemd-timesyncd Running"
+    description: "Запуск службы логирования systemd-timesyncd: start"
+    severity: "HIGH"
+    type: "text"
+    check:
+      command: "systemctl is-active systemd-timesyncd 2>/dev/null || echo 'inactive'"
+      expect: "active"
+
+  - id: "systemd_timesyncd_enabled"
+    name: "systemd-timesyncd Enabled"
+    description: "Запуск службы логирования auditd: enable (автозагрузка)"
+    severity: "HIGH"
+    type: "text"
+    check:
+      command: "systemctl is-enabled systemd-timesyncd 2>/dev/null || echo 'disabled'"
+      expect: "enabled"
+
+  - id: "timesyncd_config_valid_ntp_server"
+    name: "Valid NTP Server in timesyncd.conf"
+    description: "Наличие в файле /etc/systemd/timesyncd.conf одного из следующих NTP-серверов: ntp1.vniiftri.ru, ntp2.vniiftri.ru, ntp3.vniiftri.ru, ntp4.vniiftri.ru"
+    severity: "MEDIUM"
+    type: "contains"
+    check:
+      command: "grep '^NTP\\|^FallbackNTP' /etc/systemd/timesyncd.conf.bak 2>/dev/null"
+      expect: "vniiftri.ru"
+
+  - id: "declare_bash_bashrc"
+    name: "declare -r TMOUT=900"
+    description: "declare -r TMOUT=900"
+    severity: "HIGH"
+    type: "text"
+    check:
+      command: "grep 'declare -r TM' /etc/bash.bashrc.bak || echo 'inactive'"
+      expect: "declare -r TMOUT=900"
+
+  - id: "export_bash_bashrc"
+    name: "export TMOUT settings"
+    description: "export TMOUT"
+    severity: "HIGH"
+    type: "text"
+    check:
+      command: "grep 'export TMOUT' /etc/bash.bashrc.bak || echo 'inactive'"
+      expect: "export TMOUT"
+
+  - id: "afick_base_directories_and_exclusions"
+    name: "AFICK Base Directories and Exclusions"
+    description: "Проверка настройки мониторинга базовых каталогов и исключений в /etc/afick.conf"
+    severity: "HIGH"
+    type: "file_contains_lines"
+    check:
+      command: "echo '{password}' | sudo -S cat /etc/afick.conf.bak"
+      expect: |
+        = / DIR
+        /bin PARSEC
+        /boot GOST
+        /dev p+n
+        ! /dev/bsg
+        ! /dev/bus
+        ! /dev/pts
+        ! /dev/shm
+        /etc    ETC
+        /etc/mtab ETC - md5 - s
+        /etc/adjtime ETC - md5
+        /etc/aliases.db ETC - md5
+        ! /etc/cups
+        /lib PARSEC
+        /lib64 PARSEC
+        /lib/modules PARSEC
+        /sbin PARSEC
+        /usr/bin PARSEC
+        /usr/sbin PARSEC
+        /usr/local/bin PARSEC
+        /usr/local/sbin PARSEC
+        /usr/local/lib PARSEC
+        /var/ftp PARSEC
+        /var/log Logs
+        ! /var/log/journal
+        = /var/log/afick Logs
+
+
+  - id: "fstab_ext2_secdelrnd"
+    name: "Fstab ext2 secdelrnd"
+    description: "Проверка параметра secdelrnd=2 для ext2 разделов"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'ext2' /etc/fstab.bak 2>/dev/null || echo 'NO_EXIST'"
+      expect: "secdelrnd=2"
+
+  - id: "fstab_ext3_secdelrnd"
+    name: "Fstab ext3 secdelrnd"
+    description: "Проверка параметра secdelrnd=2 для ext3 разделов"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'ext3' /etc/fstab.bak 2>/dev/null || echo 'NO_EXIST'"
+      expect: "secdelrnd=2"
+
+ 
+  - id: "fstab_ext4_secdelrnd"
+    name: "Fstab ext4 secdelrnd"
+    description: "Проверка параметра secdelrnd=2 для ext4 разделов"
+    severity: "HIGH"
+    type: "contains"
+    check:
+      command: "grep 'ext4' /etc/fstab.bak 2>/dev/null || echo 'NO_EXIST'"
+      expect: "secdelrnd=2"
+
+
+  - id: "fstab_xfs_secdelrnd"
+    name: "Fstab xfs secdelrnd"
+    description: "Проверка параметра secdelrnd=2 для xfs разделов"
+    severity: "HIGH"
+    type: "contains1"
+    check:
+      command: "grep 'xfs' /etc/fstab.bak 2>/dev/null || echo 'NO_EXIST'"
+      expect: "secdelrnd=2"
+
